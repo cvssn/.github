@@ -1,2 +1,3 @@
 # .github
-default community health/policy files
+
+arquivos de integridade da comunidade padrão no github
