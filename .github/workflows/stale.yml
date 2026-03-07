@@ -1,0 +1,36 @@
+name: 'identificar e encerrar problemas e solicitações de pull obsoletas'
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 1 * * *'
+
+permissions:
+  issues: write
+  pull-requests: none
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/stale@v9
+        with:
+          stale-issue-message:
+            esta questão foi identificada como obsoleta porque
+            não houve atividade durante 14 dias.
+
+            a questão será encerrada em 5 dias. se isso estiver incorreto,
+            basta comentar na questão ou remover o rótulo de obsoleta.
+          stale-pr-message:
+            esta solicitação de pull request foi identificada como obsoleta por
+            não ter apresentado atividade nos últimos 14 dias.
+
+            a solicitação de pull request será fechada em 5 dias. se isso estiver
+            incorreto, basta comentar na pr, remover o rótulo ou mesclar a pr.
+
+            lembrete, após a aprovação de um pr e a conclusão das verificações,
+            você **pode mesclá-lo você mesmo**.
+          days-before-stale: 14
+          days-before-close: 5
+          exempt-issue-labels: "keep-me"
+          exempt-pr-labels: "keep-me"
