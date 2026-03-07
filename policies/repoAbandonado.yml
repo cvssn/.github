@@ -1,0 +1,10 @@
+name: AbandonedRepo
+description: a política de arquivamento de repositórios antigos
+owner: 
+resource: repository
+where: 
+configuration:
+  abandonedRepoPrimitive:
+    isEnabled: true
+    # 18 meses
+    notUsedDays: 540
