@@ -1,0 +1,11 @@
+name: platform_context
+description: o contexto para a plataforma gitops, isso irá guiar as políticas específicas do gitops
+
+owner:
+resource: repository
+where:
+configuration:
+  platformContext:
+    active: true
+onFailure:
+onSuccess:
