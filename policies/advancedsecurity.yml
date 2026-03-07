@@ -1,0 +1,9 @@
+name: configurações de segurança avançada
+description: política de configurações ghas
+
+resource: repository
+
+configuration:
+  advancedSecurity:
+    secretScanning: true
+    secretScanningPushProtection: true
